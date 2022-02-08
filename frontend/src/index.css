@@ -223,3 +223,199 @@ body{
   padding: 10px;
   width: 600px;
 }
+
+.no-play-box{
+  height: 0px;
+  transition: height 0.5s ease-in;
+}
+
+.play-box{
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  color: black;
+  padding: 10px;
+  transition: height 1s linear;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+}
+
+.play-box p{
+  font-weight: bold;
+}
+
+.play-box button{
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.toggle-btn{
+  font-size: 55px;
+  color: #6d706f;
+  background-color: #ef6c00;
+  border-radius: 50%;
+}
+
+.icon-btn{
+  font-size: 40px;
+  justify-items: right;
+  color: #6d706f;
+}
+
+.css_animation .wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.css_animation .wrapper div{
+  height: 100%;
+  width: 2%;
+  border-radius: 5px;
+  position: absolute;
+}
+.css_animation .wrapper div:nth-of-type(1){
+  animation: prop 17s 0.000s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(2){
+  animation: prop 17s -16.227s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(3){
+  animation: prop 17s -15.455s linear infinite
+}
+ .css_animation .wrapper div:nth-of-type(4){
+  animation: prop 17s -14.682s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(5){
+  animation: prop 17s -13.905s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(6){
+  animation: prop 17s -13.136s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(7){
+  animation: prop 17s -12.364s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(8){
+  animation: prop 17s -11.591s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(9){
+  animation: prop 17s -10.818s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(10){
+  animation: prop 17s -10.045s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(11){
+  animation: prop 17s -9.273s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(12){
+  animation: prop 17s -8.500s linear infinite
+}
+.css_animation .wrapper div:nth-of-type(13){
+  animation: prop 17s -7.727s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(14){
+  animation: prop 17s -6.955s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(15){
+  animation: prop 17s -6.182s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(16){
+  animation: prop 17s -5.409s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(17){
+  animation: prop 17s -4.636s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(18){
+  animation: prop 17s -3.864s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(19){
+  animation: prop 17s -3.091s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(20){
+  animation: prop 17s -2.318s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(21){
+  animation: prop 17s -1.545s linear infinite
+} 
+.css_animation .wrapper div:nth-of-type(22){
+  animation: prop 17s -0.773s linear infinite
+} 
+
+@keyframes prop {
+  0% {
+    background: red;
+    left:0;
+  }
+  5%{
+    height: 100%;
+    margin-top: 0;
+    background: #9337fe;
+  }
+  10%{
+    height: 100%;
+    margin-top: 0;
+    background: #c532fc;
+  }
+  20%{
+    height: 30%;
+    margin-top: 5%;
+    background: #3af9da;
+  }
+  30%{
+   
+    height: 100%;
+    margin-top: 0;
+    background: #3af9da;
+  }
+  40%{
+    height: 30%;
+    margin-top: 5%;
+    background: #3af9da;
+  }
+  50%{
+    height: 100%;
+    margin-top: 0;
+    background: #3af9da;
+  }
+  60%{
+    height: 100%;
+    margin-top: 0;
+    background: #3af9da;
+  }
+  70%{
+    height: 30%;
+    margin-top: 5%;
+    background: #54e678;
+  }
+
+  75%{
+    height: 100%;
+    margin-top: 0;
+    background: #4df3a9;
+  }
+  80%{
+    height: 100%;
+    background: #3af9da;
+  }
+  
+  85%{
+    height: 100%;
+    margin-top: 0;
+    background: #36ebf4;
+  }
+  90%{
+    height: 30%;
+    margin-top: 5%;
+    background: #3dbf3f;
+  }
+  95%{
+    background: #3c82f1;
+  }
+  100%{
+    left: 100%;
+    height: 100%;
+    background: #5b38ec;
+  }
+}
