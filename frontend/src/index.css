@@ -101,6 +101,16 @@ body{
   border: none;
   background-color: #ef6c00;
 }
+
+.stationpanel{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 950px;
+  width: 100%;
+  
+}
+
 .stations-container{
   margin-bottom: 10px;
 }

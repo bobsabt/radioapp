@@ -7,13 +7,19 @@ const Home = ({ countries, stations, currentPage, setCurrentPage, stationsPerPag
 
     const [genre, setGenre] = React.useState("all");
     const [code, setCode] = React.useState("");
+    const [name, setName] = React.useState("");
 
     const updateGenre = (newGenre) => { 
         setGenre(newGenre);
     };
+
     const updateCountryCode = (newCode) => {  
         setCode(newCode);
         
+    };
+
+    const updateName = (newName) => { 
+        setName(newName)
     };
   
 
@@ -31,6 +37,9 @@ const Home = ({ countries, stations, currentPage, setCurrentPage, stationsPerPag
         setCurrentPage={setCurrentPage}
         stationsPerPage={stationsPerPage}
         total={total}
+        name={name}
+        updateName={updateName}
+
       />
     </div>
   );

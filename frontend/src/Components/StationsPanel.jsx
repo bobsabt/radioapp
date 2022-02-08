@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 import radio from "../Logo/radio.png";
 
 
-const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsPerPage }) => {
+const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsPerPage, name, updateName }) => {
 
     const setDefaultSrc = event => {
         event.target.src = radio;
@@ -12,6 +12,11 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
 
     return (
         <div className='stationpanel'>
+
+            <div className="station-search">
+                <label htmlFor="name">Station name</label>
+                <input id="name" type="text" placeholder='Search station...' value={name} onChange={e => updateName(e.target.value)}/>
+            </div>
             <div className='placement stations-container'>
                 {stations.map((station)=>
                     <Station key={station.id}
