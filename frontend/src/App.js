@@ -4,20 +4,44 @@ import Navbar from './Components/Navbar';
 import './index.css';
 
 function App() {
+
+  // The array which contains the radio stations
+  const [stations, setStations] = React.useState([]);
+  // The array which contains the countries objects
+  const [country, setCountry] = React.useState([]);
+  // The time when we are waiting the loading data
+  const [isLoading, setIsLoading] = React.useState(false);
   
   const api = new RadioBrowserApi('My Radio App');
 
   // Get data from radio api
-  const setupApi = async () => {
+  const getData = async () => {
     const datas = await api.searchStations({limit: 30})
     .then((data) => {
-      console.log(data)
+      let myCountryArr=[];
+      
+      for(let i=0; i<data.length; i++){
+        let tempCountryName=data[i].country;
+        let tempCountryCode=data[i].countryCode;   
+    
+        // Save the countries and their code from the aPI 
+        if((tempCountryName !== "") && (tempCountryCode !== "")){
+          if(!(myCountryArr.some(country => country.code === tempCountryCode))){          
+            myCountryArr.push({code: tempCountryCode, country:tempCountryName});
+          }           
+        }
+      }
+
+    myCountryArr.sort((a, b) => (a.country > b.country) ? 1 : (b.country > a.country) ? -1 : 0);
+    setCountry([{code: "", country:"All"}, ...myCountryArr]);
+    setStations(data);
+    setIsLoading(true); 
     
     })      
   };
 
   React.useEffect(() => {
-      setupApi()
+      getData()
     }, 
     []
   );
