@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="App placement">
-      <div >
+      <div className='radio-content'>
         <Navbar/>
         <Home 
           countries={countries}
