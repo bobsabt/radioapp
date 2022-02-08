@@ -1,7 +1,9 @@
 import React from 'react';
 import { RadioBrowserApi } from 'radio-browser-api';
 import Navbar from './Components/Navbar';
+import Home from './Components/Home';
 import './index.css';
+
 
 function App() {
 
@@ -50,6 +52,7 @@ function App() {
     <div className="App">
       <div>
         <Navbar/>
+        <Home />
       </div>
     </div>
   );
