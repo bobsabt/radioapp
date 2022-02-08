@@ -27,10 +27,7 @@ const Home = ({ countries, stations }) => {
       />
       <StationsPanel
         stations={stations}
-      
       />
-
-     
     </div>
   );
 };
