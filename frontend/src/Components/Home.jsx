@@ -3,7 +3,7 @@ import FilterPanel from './FilterPanel';
 import StationsPanel from './StationsPanel';
 
 
-const Home = ({ countries, stations }) => {
+const Home = ({ countries, stations, currentPage, setCurrentPage, stationsPerPage, total }) => {
 
     const [genre, setGenre] = React.useState("all");
     const [code, setCode] = React.useState("");
@@ -27,6 +27,10 @@ const Home = ({ countries, stations }) => {
       />
       <StationsPanel
         stations={stations}
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage}
+        stationsPerPage={stationsPerPage}
+        total={total}
       />
     </div>
   );

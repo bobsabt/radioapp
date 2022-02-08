@@ -13,6 +13,13 @@ function App() {
   const [countries, setCountries] = React.useState([]);
   // The time when we are waiting the loading data
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const [stationsPerPage, setStationsPerPage] = React.useState(9);
+  const [currentPage, setCurrentPage] = React.useState(1);
+
+  const indexOfLastPost = currentPage*stationsPerPage;
+  const indexOfFirstPots = indexOfLastPost- stationsPerPage;
+  const currentStations = stations.slice(indexOfFirstPots,indexOfLastPost);  
   
   const api = new RadioBrowserApi('My Radio App');
 
@@ -54,7 +61,11 @@ function App() {
         <Navbar/>
         <Home 
           countries={countries}
-          stations={stations}
+          stations={currentStations}
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage}
+          stationsPerPage={stationsPerPage}
+          total={stations.length}
         />
       </div>
     </div>
