@@ -10,7 +10,7 @@ function App() {
   // The array which contains the radio stations
   const [stations, setStations] = React.useState([]);
   // The array which contains the countries objects
-  const [country, setCountry] = React.useState([]);
+  const [countries, setCountries] = React.useState([]);
   // The time when we are waiting the loading data
   const [isLoading, setIsLoading] = React.useState(false);
   
@@ -35,7 +35,7 @@ function App() {
       }
 
     myCountryArr.sort((a, b) => (a.country > b.country) ? 1 : (b.country > a.country) ? -1 : 0);
-    setCountry([{code: "", country:"All"}, ...myCountryArr]);
+    setCountries([{code: "", country:"All"}, ...myCountryArr]);
     setStations(data);
     setIsLoading(true); 
     
@@ -52,7 +52,9 @@ function App() {
     <div className="App">
       <div>
         <Navbar/>
-        <Home />
+        <Home 
+          countries={countries}
+        />
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Genre = ({ genre, filteredgenre}) => {
+const Genre = ({ genre, filteredgenre, updateGenre }) => {
 
   return (
     <>
-      <button className="genre-btn" >
+      <button className={genre === filteredgenre ? "selected-genre" : "genre-btn"} onClick={() => updateGenre(filteredgenre)}>
         {filteredgenre}
       </button>
     </>
