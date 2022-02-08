@@ -154,4 +154,41 @@ body{
   background-color: white;
   z-index:1;
 }
+.pagenumbers{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
 
+.pagenumbers li{
+  align-self: center;
+  padding: 8px;
+  cursor: pointer; 
+  border: 1px solid white;
+}
+
+.pagenumbers li.active{
+  background-color: white;
+  color: black;
+}
+
+.pagenumbers  button{
+  background-color: transparent;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.pagenumbers button:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.pagenumbers li button:focus{
+  outline:none;
+}
