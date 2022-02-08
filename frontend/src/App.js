@@ -54,6 +54,7 @@ function App() {
         <Navbar/>
         <Home 
           countries={countries}
+          stations={stations}
         />
       </div>
     </div>

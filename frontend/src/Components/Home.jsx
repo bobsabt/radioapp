@@ -1,8 +1,9 @@
 import React from 'react';
 import FilterPanel from './FilterPanel';
+import StationsPanel from './StationsPanel';
 
 
-const Home = ({ countries }) => {
+const Home = ({ countries, stations }) => {
 
     const [genre, setGenre] = React.useState("all");
     const [code, setCode] = React.useState("");
@@ -23,6 +24,10 @@ const Home = ({ countries }) => {
         updateGenre={updateGenre}
         countries={countries}
         updateCountryCode = {updateCountryCode}
+      />
+      <StationsPanel
+        stations={stations}
+      
       />
 
      
