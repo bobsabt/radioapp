@@ -51,7 +51,8 @@ function App() {
   };
 
   React.useEffect(() => {
-      getData()
+      getData();
+      document.title="RadioApp"
     }, 
     []
   );
