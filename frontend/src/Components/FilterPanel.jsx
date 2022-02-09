@@ -15,7 +15,12 @@ const FilterPanel = ({genre, updateGenre, countries, updateCountryCode}) => {
                                 <Country 
                                     key={index}
                                     code={country.code}
-                                    countryname={country.country}
+                                    countryname={
+                                        country.country.length > 40 ?  
+                                           country.country.substring(0,40)+"..." 
+                                        : 
+                                            country.country
+                                    }
                                 />
                             )}
                         </select>
