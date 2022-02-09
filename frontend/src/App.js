@@ -3,6 +3,7 @@ import { RadioBrowserApi } from 'radio-browser-api';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import './index.css';
+import './loadingmask.css';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   // The array which contains the countries objects
   const [countries, setCountries] = React.useState([]);
   // The time when we are waiting the loading data
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   const [stationsPerPage, setStationsPerPage] = React.useState(9);
   const [currentPage, setCurrentPage] = React.useState(1);
@@ -44,7 +45,7 @@ function App() {
     myCountryArr.sort((a, b) => (a.country > b.country) ? 1 : (b.country > a.country) ? -1 : 0);
     setCountries([{code: "", country:"All"}, ...myCountryArr]);
     setStations(data);
-    setIsLoading(true); 
+    setIsLoading(false); 
     
     })      
   };
@@ -59,16 +60,20 @@ function App() {
     <div className="App placement">
       <div className='radio-content'>
         <Navbar/>
-        <Home 
-          countries={countries}
-          stations={currentStations}
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage}
-          stationsPerPage={stationsPerPage}
-          total={stations.length}
-          api={api}
-          setStations={setStations}
-        />
+        {isLoading ? 
+        <div className='lmask'></div>
+        :
+          <Home 
+            countries={countries}
+            stations={currentStations}
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage}
+            stationsPerPage={stationsPerPage}
+            total={stations.length}
+            api={api}
+            setStations={setStations}
+          />
+        }
       </div>
     </div>
   );
