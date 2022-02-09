@@ -65,7 +65,7 @@ body{
 }
 
 .filter-container{
-  max-width: 300px;
+  max-width: 280px;
   width: 100%;
   height: 100%;
   padding-top: 20px;
@@ -108,8 +108,8 @@ body{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  max-width: 900px; 
-  border-left: 2px solid white 
+  width: 900px; 
+  border-left: 2px solid white ;
 }
 
 .stations-container{
@@ -118,8 +118,8 @@ body{
 }
 
 .station-box{
-  width: 270px;
-  margin: 10px; 
+  width: 280px;
+  margin: 5px; 
   justify-content: left;
 }
 
@@ -208,6 +208,9 @@ body{
 }
 
 .station-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -420,5 +423,66 @@ body{
     left: 100%;
     height: 100%;
     background: #5b38ec;
+  }
+}
+@media screen and (max-width:1200px){
+
+  .radio-content{
+    margin: 20px;
+  }
+  
+  .home-container{
+    flex-direction: column;
+  }
+  .navbar{
+    justify-content: center;
+  }
+  .title-container img{
+    margin:0;
+  }
+
+  .filter-container{
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 2px solid white;
+  }
+
+  .genre-btn, .selected-genre{
+    width: 80px;
+    margin: 10px 10px 10px 0;
+  }
+
+  .stationpanel{
+    border: none;
+    max-width: 1200px;
+    width: 100%;
+  }
+  .station-search{
+    flex-direction: column;
+    margin: 0  20px 0;
+  }
+  
+  .station-search label{
+    margin-bottom: 10px;
+  }
+  
+  .station-search input{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width:750px){
+  .css_animation{
+    margin-left: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .play-box p{
+    font-size: 13px;
+  }
+
+  .toggle-btn{
+    font-size: 60px;
   }
 }

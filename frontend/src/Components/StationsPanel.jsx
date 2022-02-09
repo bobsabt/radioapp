@@ -61,9 +61,13 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
                 togglePlayerbtn={togglePlayerbtn}
                 handleClose={handleClose}
             />
-            <div className="station-search">
+            <div className=" station-search">
+
+            
+            
                 <label htmlFor="name">Station name</label>
                 <input id="name" type="text" placeholder='Search station...' value={name} onChange={e => updateName(e.target.value)}/>
+            
             </div>
             <div className='placement stations-container'>
                 {stations.map((station)=>
