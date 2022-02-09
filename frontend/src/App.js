@@ -66,6 +66,8 @@ function App() {
           setCurrentPage={setCurrentPage}
           stationsPerPage={stationsPerPage}
           total={stations.length}
+          api={api}
+          setStations={setStations}
         />
       </div>
     </div>
