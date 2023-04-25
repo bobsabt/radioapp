@@ -30,23 +30,29 @@ function App() {
       await api.searchStations({limit: 30})
       .then((data) => {
         let myCountryArr=[];
+        let myStations = [];
       
         for(let i=0; i<data.length; i++){
-          let tempCountryName=data[i].country;
-          let tempCountryCode=data[i].countryCode;   
-      
-          // Save the countries and their code from the aPI 
-          if((tempCountryName !== "") && (tempCountryCode !== "")){
-            if(!(myCountryArr.some(country => country.code === tempCountryCode))){          
-              myCountryArr.push({code: tempCountryCode, country:tempCountryName});
-            }           
+          const stringPattern = /[a-zA-Z]/;
+
+          if(stringPattern.test(data[i].name)) {
+            myStations.push(data[i])
+
+            let tempCountryName=data[i].country;
+            let tempCountryCode=data[i].countryCode;   
+        
+            // Save the countries and their code from the aPI 
+            if((tempCountryName !== "") && (tempCountryCode !== "")){
+              if(!(myCountryArr.some(country => country.code === tempCountryCode))){          
+                myCountryArr.push({code: tempCountryCode, country:tempCountryName});
+              }           
+            }
           }
         };
 
       myCountryArr.sort((a, b) => (a.country > b.country) ? 1 : (b.country > a.country) ? -1 : 0);
       setCountries([{code: "", country:"All"}, ...myCountryArr]);
-      console.log(data)
-      setStations(data);
+      setStations(myStations);
       setIsLoading(false); 
     })      
   };

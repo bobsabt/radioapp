@@ -3,7 +3,7 @@ import React from 'react';
 const Pagination = ({ currentPage, setCurrentPage, stationsPerPage, total }) => {
     
 
-    const [pageNumberLimit, setpageNumberLimit] = React.useState(3);
+    const pageNumberLimit = 3;
     const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
     const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);
     
@@ -21,7 +21,6 @@ const Pagination = ({ currentPage, setCurrentPage, stationsPerPage, total }) => 
         setCurrentPage(currentPage+1);
 
         if((currentPage + 1 > maxPageNumberLimit) ){
-            console.log(pageNumberLimit)
             setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
             setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit)
         }

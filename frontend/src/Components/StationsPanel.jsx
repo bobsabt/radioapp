@@ -10,7 +10,7 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
     const [isshowPlay, setIsshowPlay] = React.useState(false);
     const [isBtnPlay, setIsBtnPlay] = React.useState(false);
     const [actualRadio, setActualRadio] = React.useState();
-    const [currentSong, setCurrentSong] = React.useState(null);
+    const currentSong = null;
 
     const audio = React.useRef(currentSong);
 
@@ -20,7 +20,6 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
 
     const togglePlay = (url, currentRadio) => {
         const song = url;
-        console.log(song)
         setActualRadio(currentRadio);
 
         if (currentSong === song) {
@@ -52,7 +51,7 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
         audio.current.pause()
         setIsshowPlay(false)
     };
-    console.log(stations.urlResolved)
+
     return (
         <div className='stationpanel'>
             <Play
