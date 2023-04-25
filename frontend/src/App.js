@@ -28,26 +28,26 @@ function App() {
   React.useEffect(() => {
     // Get data from radio api
     const getData = async () => {
-      await api.searchStations({limit: 30})
+      await api.searchStations({limit: 100})
       .then((data) => {
         let myCountryArr=[];
         let myStations = [];
       
         for(let i=0; i<data.length; i++){
+          
           const stringPattern = /[a-zA-Z]/;
-
           if(stringPattern.test(data[i].name)) {
             myStations.push(data[i])
+          }
 
-            let tempCountryName=data[i].country;
-            let tempCountryCode=data[i].countryCode;   
-        
-            // Save the countries and their code from the aPI 
-            if((tempCountryName !== "") && (tempCountryCode !== "")){
-              if(!(myCountryArr.some(country => country.code === tempCountryCode))){          
-                myCountryArr.push({code: tempCountryCode, country:tempCountryName});
-              }           
-            }
+          let tempCountryName=data[i].country;
+          let tempCountryCode=data[i].countryCode;   
+      
+          // Save the countries and their code from the aPI 
+          if((tempCountryName !== "") && (tempCountryCode !== "")){
+            if(!(myCountryArr.some(country => country.code === tempCountryCode))){          
+              myCountryArr.push({code: tempCountryCode, country:tempCountryName});
+            }           
           }
         };
 
