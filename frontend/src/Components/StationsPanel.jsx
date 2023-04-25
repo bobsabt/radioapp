@@ -18,8 +18,9 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
         event.target.src = radio;
     };
 
-    const togglePlay = (url, currentRadio, currentIcon) => {
+    const togglePlay = (url, currentRadio) => {
         const song = url;
+        console.log(song)
         setActualRadio(currentRadio);
 
         if (currentSong === song) {
@@ -51,7 +52,7 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
         audio.current.pause()
         setIsshowPlay(false)
     };
-
+    console.log(stations.urlResolved)
     return (
         <div className='stationpanel'>
             <Play
@@ -71,6 +72,7 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
             </div>
             <div className='placement stations-container'>
                 {stations.map((station)=>
+               
                     <Station key={station.id}
                         audiosrc={station.urlResolved}
                         stationId={station.id}
