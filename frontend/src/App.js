@@ -23,6 +23,7 @@ function App() {
   const currentStations = stations.slice(indexOfFirstPots,indexOfLastPost);  
 
   const api = React.useMemo(() => {return new RadioBrowserApi('My Radio App')}, []);
+  api.setBaseUrl('https://at1.api.radio-browser.info')
 
   React.useEffect(() => {
     // Get data from radio api
