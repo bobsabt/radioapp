@@ -1,11 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
-
+import "../Style/Play.css"
 const Play = ({ actualRadio, togglePlayerbtn, handleClose, isshowPlay, isBtnPlay }) => {
   
   return(
-       <div className={isshowPlay ? "placement play-box" : "placement no-play-box"}>
+       <div className={isshowPlay ? "play-container play-box" : "play-container no-play-box"}>
             {isshowPlay && 
                 <>
                     <p>{actualRadio}</p>          
@@ -42,7 +42,7 @@ const Play = ({ actualRadio, togglePlayerbtn, handleClose, isshowPlay, isBtnPlay
                             <div></div>
                         </div>}
                     </div>
-                    <button><FontAwesomeIcon className='icon-btn' icon={faTimesCircle} onClick={handleClose}/></button>
+                    <button><FontAwesomeIcon className='close-icon-btn' icon={faTimesCircle} onClick={handleClose}/></button>
                 </>
             }
       </div>

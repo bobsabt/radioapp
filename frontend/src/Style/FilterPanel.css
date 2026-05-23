@@ -1,0 +1,69 @@
+.filter-container{
+  max-width: 300px;
+
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+
+}
+
+.logo img {
+  width: 65px;
+  height: 65px;
+  background: #1f2937;
+  border-radius: 50%;
+}
+
+.logo h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+
+.filter-country {
+  margin: 50px 0 50px 0;
+}
+
+.filter-title {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-country select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #1f2937;
+  color: #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.filter-country select:hover {
+  background: #374151;
+}
+
+/* focus */
+.filter-country select:focus {
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.5);
+}
+
+/* option */
+.filter-country option {
+  background: #111827;
+  color: white;
+}
+

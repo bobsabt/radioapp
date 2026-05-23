@@ -1,5 +1,7 @@
 import Genre from './Genre';
 import Country from './Country';
+import "../Style/FilterPanel.css";
+import radio from "../Logo/radio.png";
 
 const FilterPanel = ({genre, updateGenre, countries, updateCountryCode}) => {
 
@@ -7,8 +9,12 @@ const FilterPanel = ({genre, updateGenre, countries, updateCountryCode}) => {
     
     return (
         <div className='filter-container'>
+               <div className="logo">
+                    <img src={radio} alt="logo" />
+                    <h2>My RadioSite</h2>
+                </div>
             <div className='filter-search'> 
-                <div className='filter-counry'>
+                <div className='filter-country'>
                     <p className='filter-title'>Country</p> 
                         <select onChange={(e)=>updateCountryCode((e.target.value))}>
                             {countries.map((country,index) => 

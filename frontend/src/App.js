@@ -1,6 +1,5 @@
 import React from 'react';
 import { RadioBrowserApi } from 'radio-browser-api';
-import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import './index.css';
 import './loadingmask.css';
@@ -23,7 +22,7 @@ function App() {
   const currentStations = stations.slice(indexOfFirstPots,indexOfLastPost);  
 
   const api = React.useMemo(() => {return new RadioBrowserApi('My Radio App')}, []);
-  api.setBaseUrl('https://at1.api.radio-browser.info')
+api.setBaseUrl('https://all.api.radio-browser.info')
 
   React.useEffect(() => {
     // Get data from radio api
@@ -64,9 +63,8 @@ function App() {
   );
 
   return (
-    <div className="App placement">
-      <div className='radio-content'>
-        <Navbar/>
+    <div className="app">
+      <div className='app-container'>
         {isLoading ? 
         <div className='lmask'></div>
         :

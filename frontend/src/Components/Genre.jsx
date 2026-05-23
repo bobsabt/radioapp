@@ -1,4 +1,5 @@
 import React from "react";
+import "../Style/Genre.css";
 
 const Genre = ({ genre, filteredgenre, updateGenre }) => {
 

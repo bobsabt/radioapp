@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterPanel from './FilterPanel';
 import StationsPanel from './StationsPanel';
-
+import "../Style/Home.css"
 
 const Home = ({ countries, stations, currentPage, setCurrentPage, stationsPerPage, total, api, setStations }) => {
 

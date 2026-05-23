@@ -3,7 +3,7 @@ import Station from './Station';
 import Pagination from './Pagination';
 import Play from './Play';
 import radio from "../Logo/radio.png";
-
+import "../Style/StationPanel.css";
 
 const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsPerPage, name, updateName }) => {
 
@@ -54,6 +54,10 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
 
     return (
         <div className='stationpanel'>
+            <div className=" station-search">
+                <label htmlFor="name">STATION NAME</label>
+                <input id="name" type="text" placeholder='Search station...' value={name} onChange={e => updateName(e.target.value)}/>
+            </div>
             <Play
                 isshowPlay={isshowPlay}
                 isBtnPlay={isBtnPlay}
@@ -61,15 +65,7 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
                 togglePlayerbtn={togglePlayerbtn}
                 handleClose={handleClose}
             />
-            <div className=" station-search">
-
-            
-            
-                <label htmlFor="name">Station name</label>
-                <input id="name" type="text" placeholder='Search station...' value={name} onChange={e => updateName(e.target.value)}/>
-            
-            </div>
-            <div className='placement stations-container'>
+            <div className='stations-container'>
                 {stations.map((station)=>
                
                     <Station key={station.id}
@@ -83,15 +79,13 @@ const StationsPanel = ({ stations, currentPage, setCurrentPage, total, stationsP
                     />
                 )}
             </div>
-        <Pagination 
-            currentPage={currentPage} 
-            setCurrentPage={setCurrentPage} 
-            stationsPerPage={stationsPerPage} 
-            total={total} 
-                
-        />
-        
-</div>
+            <Pagination 
+                currentPage={currentPage} 
+                setCurrentPage={setCurrentPage} 
+                stationsPerPage={stationsPerPage} 
+                total={total}         
+            />      
+        </div>
   );
 };
 
