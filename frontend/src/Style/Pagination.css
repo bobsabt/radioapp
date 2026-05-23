@@ -60,3 +60,19 @@
 .pagenumbers button:disabled:hover {
   transform: none;
 }
+
+@media screen and (max-width:1280px){
+  .pagenumbers {
+    position: relative;
+  }
+}
+
+@media screen and (max-width:1024px){
+  
+}
+
+@media screen and (max-width:425px){
+  .pagenumbers button{
+    display: none;
+  }
+}

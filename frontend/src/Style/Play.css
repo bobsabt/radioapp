@@ -4,6 +4,7 @@
   margin: 20px 0;
   height: 70px; 
   padding: 10px;
+
 }
 
 .no-play-box{
@@ -205,5 +206,11 @@
     left: 100%;
     height: 100%;
     background: #5b38ec;
+  }
+}
+
+@media screen and (max-width:768px){
+  .css_animation {
+    display: none;
   }
 }
