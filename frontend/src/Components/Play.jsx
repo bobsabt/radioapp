@@ -8,7 +8,7 @@ const Play = ({ actualRadio, togglePlayerbtn, handleClose, isshowPlay, isBtnPlay
        <div className={isshowPlay ? "play-container play-box" : "play-container no-play-box"}>
             {isshowPlay && 
                 <>
-                    <p>{actualRadio}</p>          
+                    <p className='actual-radioname'>{actualRadio}</p>          
                     <button onClick={togglePlayerbtn}>
                         {isBtnPlay ? 
                             <FontAwesomeIcon className='toggle-btn' icon={faPauseCircle} />
